@@ -42,6 +42,7 @@
             width: 15%;
         }
         
+        
         #ligar {
             background-color: green;
             color: white;
@@ -57,21 +58,57 @@
         }
         
         #desligar:hover {
-            background-color: rgb(212, 62, 62);
+            background-color: #FF6347;
         }
-        
+        #fotinho{
+            width: 100%;
+            height: 135px;
+            display: flex;
+            justify-content: center;
+        }
         .ligado {
-            background-image: url(https://cdn3.iconfinder.com/data/icons/home-appliances-24/512/015-512.png);
-            background-repeat: no-repeat;
+            height: 135px;
+            width: 135px;
+            align-items:  center;
+            background-size: contain;
+        }
+        #img1 .ligado{
+                background: url("https://media.giphy.com/media/lJ0SkU3kJfu8ZEatoD/giphy.gif") no-repeat;
+        }
+        #img2 .ligado{
+            background: url("https://www.imagensanimadas.com/data/media/93/lampada-abajur-imagem-animada-0082.gif") no-repeat;
+        }
+        #img3 .ligado{
+            background: url("http://www.luz-eletrica.com.br/note005aa_arquivos/desliza_anima1.gif") no-repeat;
         }
         
         p {
             margin-bottom: 10px;
         }
+        @media screen and (max-width: 960px){
+            .button {
+                font-size: 10px;
+                text-align: center;
+                width: 20%;
+            }
+            .ligado {
+                height: 90px;
+                width: 90px;
+                align-items:  center;
+                background-size: contain;
+            }
+            #fotinho{
+                width: 100%;
+                height: 90px;
+                display: flex;
+                justify-content: center;
+            }
+        }
     </style>
     <script type="text/javascript">
-        function ligar() {
-            document.getElementById("")
+        function ligar(id) {
+            var img = document.getElementById(id);
+            img.classList.add("ligado");
         }
     </script>
 </head>
@@ -81,24 +118,30 @@
     <div id="container">
         <div id="dispositivo1" class="dispositivos">
             <p>Dispositivo 1</p>
-            <button class="button" id="ligar">Ligar</button>
+            <button class="button" onclick="ligar('img1')" id="ligar">Ligar</button>
             <button class="button" id="desligar">Desligar</button><br>
-            <div id="img1" class="ligado" src="">
+            <div id="fotinho">
+                <div id="img1">
+                </div>
             </div>
         </div>
         <div id="dispositivo2" class="dispositivos">
             <p>Dispositivo 2</p>
-            <button class="button" id="ligar">Ligar</button>
+            <button class="button" onclick="ligar('img2')" id="ligar">Ligar</button>
             <button class="button" id="desligar">Desligar</button><br>
-            <div id="img1" src="">
+            <div id="fotinho">
+            <div id="img2">
             </div>
+        </div>
         </div>
         <div id="dispositivo3" class="dispositivos">
             <p>Dispositivo 3</p>
-            <button class="button" id="ligar">Ligar</button>
+            <button class="button" onclick="ligar('img3')" id="ligar">Ligar</button>
             <button class="button" id="desligar">Desligar</button><br>
-            <div id="img1" src="">
+            <div id='fotinho'>
+            <div id="img3">
             </div>
+        </div>
         </div>
     </div>
 </body>
